@@ -2,10 +2,9 @@
 
 import * as React from "react"
 import * as CheckboxPrimitive from "@radix-ui/react-checkbox"
-import { Check } from "@phosphor-icons/react"
+import { CheckIcon } from "@phosphor-icons/react"
 
 import { cn } from "@/lib/utils"
-import getPrimaryIconStroke from "@/utils/getPrimaryIconStroke"
 
 function Checkbox({
   className,
@@ -24,7 +23,7 @@ function Checkbox({
         data-slot="checkbox-indicator"
         className="flex items-center justify-center text-current transition-none"
       >
-        <Check size={24} color={getPrimaryIconStroke()} />
+        <CheckIcon size={24} className="text-primary" />
       </CheckboxPrimitive.Indicator>
     </CheckboxPrimitive.Root>
   )
