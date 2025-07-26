@@ -74,13 +74,20 @@ export const useSignUp = () => {
   const queryClient = useQueryClient()
   return useMutation({
     mutationFn: async (userData: { email: string; password: string; name: string }) =>
-      signUp.email({
-        email: userData.email,
-        password: userData.password,
-        name: userData.name,
-        callbackURL: `${process.env.NEXT_PUBLIC_FRONTEND_URL}/verify-email`,
-        role: 'user',
-      }),
+      signUp.email(
+        {
+          email: userData.email,
+          password: userData.password,
+          name: userData.name,
+          callbackURL: `${process.env.NEXT_PUBLIC_FRONTEND_URL}/verify-email`,
+          role: 'user',
+        },
+        {
+          onError(ctx) {
+            throw ctx.error
+          },
+        }
+      ),
     onSettled: () => {
       queryClient.invalidateQueries({ queryKey: ['session'], refetchType: 'active' })
     },
@@ -100,7 +107,15 @@ export const useSignIn = () => {
       email: string
       password: string
       rememberMe: boolean
-    }) => signIn.email({ email, password, rememberMe }),
+    }) =>
+      signIn.email(
+        { email, password, rememberMe },
+        {
+          onError(ctx) {
+            throw ctx.error
+          },
+        }
+      ),
     onSettled: async () => {
       queryClient.clear()
       queryClient.invalidateQueries({ queryKey: ['session'], refetchType: 'active' })

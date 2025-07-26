@@ -17,7 +17,7 @@ const auth = betterAuth({
     connectionString: process.env.DATABASE_URL,
   }),
   user: {
-    modelName: "exchange.users",
+    modelName: "clean.users",
     additionalFields: {
       role: {
         type: "string",
@@ -30,12 +30,6 @@ const auth = betterAuth({
         required: false,
         input: false,
       },
-      dorado_funds: {
-        type: "number",
-        required: false,
-        defaultValue: 0,
-        input: false,
-      }
     },
     changeEmail: {
       enabled: true,
@@ -53,7 +47,7 @@ const auth = betterAuth({
     },
   },
   session: {
-    modelName: "exchange.session",
+    modelName: "clean.session",
     additionalFields: {
       impersonatedBy: {
         type: "string",
@@ -68,10 +62,10 @@ const auth = betterAuth({
     },
   },
   account: {
-    modelName: "exchange.account",
+    modelName: "clean.account",
   },
   verification: {
-    modelName: "exchange.verification",
+    modelName: "clean.verification",
   },
   advanced: {
     database: {
@@ -90,7 +84,7 @@ const auth = betterAuth({
     },
   },
   emailVerification: {
-    sendOnSignUp: true,
+    sendOnSignUp: false,
     autoSignInAfterVerification: true,
     sendVerificationEmail: async ({ user, url, token }, request) => {
       const isSignUp = request?.url?.includes("/sign-up");
@@ -99,7 +93,7 @@ const auth = betterAuth({
       await sendEmail({
         to: user.email,
         subject: isSignUp
-          ? "Welcome to Dorado Metals Exchange"
+          ? "Welcome to Clean Lakes and Rivers"
           : "Verify Your Email Address",
         text: `Click the link to verify your email: ${emailUrl}`,
         html: isSignUp

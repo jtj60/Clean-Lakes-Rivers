@@ -90,7 +90,7 @@ export default function SignInForm() {
               type="submit"
               variant="default"
               disabled={signInPending}
-              className="liquid-gold raised-off-page shine-on-hover text-white w-full mb-8"
+              className="bg-primary raised-off-page shine-on-hover text-white w-full mb-8"
             >
               {signInPending ? 'Signing In…' : 'Sign In'}
             </Button>

@@ -54,7 +54,7 @@ export default function Shell() {
           <div className="flex items-end">
             <Link href="/">
               <h1 className="text-lg text-primary font-medium tracking-wide">
-                Clean Rivers and Lakes
+                Clean Lakes and Rivers
               </h1>
             </Link>
 

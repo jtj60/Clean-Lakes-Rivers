@@ -36,6 +36,7 @@ export default function SignUpForm() {
   })
 
   const handleSubmit = async (values: SignUp) => {
+    console.log(values)
     signUpMutation(
       {
         email: values.email,

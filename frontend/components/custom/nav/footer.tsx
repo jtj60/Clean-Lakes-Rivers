@@ -71,7 +71,7 @@ export default function Footer() {
         </div>
 
         <div className="flex items-center w-full justify-between mt-5 ">
-          <div className="text-xs text-neutral-400 text-left">© Clean Rivers and Lakes</div>
+          <div className="text-xs text-neutral-400 text-left">© Clean Lakes and Rivers</div>
         </div>
       </footer>
 
@@ -119,7 +119,7 @@ export default function Footer() {
         </div>
         <div className="flex items-center w-full justify-between mt-1">
           <div className="text-xs text-neutral-200 dark:text-neutral-700 text-left">
-            © Clean Rivers and Lakes
+            © Clean Lakes and Rivers
           </div>
           <div className="flex items-center gap-3">
             <Button variant="ghost" className="p-0">

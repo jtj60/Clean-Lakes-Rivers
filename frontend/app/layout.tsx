@@ -17,8 +17,9 @@ export const openSans = Open_Sans({
 })
 
 export const metadata: Metadata = {
-  title: 'Dorado Metals Exchange',
-  description: 'Secure online platform to exchange precious metals.',
+  title: 'Clean Lakes and Rivers',
+  description:
+    'A nonprofit dedicated to protecting and restoring our waterways through community-driven cleanups, education, and environmental stewardship.',
 }
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
