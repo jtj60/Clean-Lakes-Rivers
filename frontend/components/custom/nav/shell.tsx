@@ -53,7 +53,7 @@ export default function Shell() {
 
           <div className="flex items-end">
             <Link href="/">
-              <h1 className="text-lg text-primary font-medium tracking-wide">
+              <h1 className="text-lg text-neutral-900 font-medium tracking-wide">
                 Clean Lakes and Rivers
               </h1>
             </Link>
